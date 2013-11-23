@@ -14,8 +14,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      UserMailer.ticket_confirmation(@user).deliver
       flash[:notice] = "User created."
-      redirect_to
+      redirect_to users_url
     else
       render "new"
     end
@@ -46,6 +47,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:f_name, :l_name, :email)
+    params.require(:user).permit(:f_name, :l_name, :email, :title, :description)
   end
 end

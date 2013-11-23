@@ -1,28 +1,26 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# HelpDesk Application
 
-Things you may want to cover:
+Run these commands to try it out.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ ```
+bundle
+cp config/application.example.yml config/application.yml
+rake db:setup
+rails s
+ ```
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Requires Ruby 2.0 or later to run.
+
+# App Features:
+
+- As a Visitor (no user model needed), I want to create a new ticket on the web site so that I can report my problems.
+- As a support agent (you?), I want to be notified with an email whenever a new ticket is created so that I don't need to access the site to see new tickets.
+- As a support agent, I want to respond to new tickets by replying to the email
+so that I can work without leaving my inbox.
+- As a Visitor, I want to see the support agent's reply on the web site
+so that I know someone is actually listening to my problems.
+
+This app has live email sending and inbound-processing capabilities using Postmark addon.
