@@ -38,6 +38,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'postmark-rails'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
